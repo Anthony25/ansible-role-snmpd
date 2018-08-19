@@ -30,6 +30,7 @@
     group: 'root'
     mode: '0644'
   notify: Restart snmpd
+  when: snmpd_create_daemon_variables
 
 - name: Configure snmpd service
   template:
