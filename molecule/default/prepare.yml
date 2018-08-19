@@ -1,0 +1,8 @@
+---
+- name: Prepare alpine
+  hosts: os_alpine
+  tasks:
+    - name: Install openrc
+      apk:
+        name: "openrc"
+        update_cache: true
