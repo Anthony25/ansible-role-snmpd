@@ -9,6 +9,10 @@
   with_flattened:
     - "{{ snmpd_packages }}"
 
+- name: Create user and group
+  include: user.yml
+  when: snmpd_create_user
+
 - name: Configure lldpd daemon variables
   template:
     src: 'etc/default/lldpd.j2'

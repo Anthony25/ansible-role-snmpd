@@ -5,5 +5,6 @@ snmpd_packages:
   - net-snmp-tools
 
 snmpd_create_daemon_variables: false
+snmpd_create_user: false
 
 # vim: set ts=2 sw=2:

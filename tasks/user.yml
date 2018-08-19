@@ -1,0 +1,15 @@
+---
+
+- name: create group for snmp
+  group:
+    name: "{{ snmpd_group }}"
+    state: "present"
+
+- name: create the user for snmp
+  user:
+    name: "{{ snmpd_user }}"
+    home: "/var/lib/snmp"
+    shell: "/bin/false"
+    group: "{{ snmpd_group }}"
+
+# vim: set ts=2 sw=2:
