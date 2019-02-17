@@ -9,6 +9,7 @@ env:
   - ANSIBLE_VERSION=2.4
   - ANSIBLE_VERSION=2.5
   - ANSIBLE_VERSION=2.6
+  - ANSIBLE_VERSION=2.7
 
 # Require the standard build environment
 sudo: required
@@ -40,12 +41,12 @@ install:
   # Check Molecule version
   - molecule --version
 
-  # Build the Docker images
-  - molecule create
-  - molecule destroy
+# Build the Docker images
+  - molecule --debug create
+  - molecule --debug destroy
 
 script:
-  - molecule test
+  - molecule --debug test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
