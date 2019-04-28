@@ -5,6 +5,7 @@
     name: 'snmpd'
     enabled: true
     state: 'restarted'
+  when: snmpd_start_service
 
 - name: Restart lldpd
   service:

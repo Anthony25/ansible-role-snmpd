@@ -8,6 +8,10 @@ provisioner:
   name: ansible
   playbooks:
     prepare: prepare.yml
+  inventory:
+    group_vars:
+      no_service:
+        snmpd_start_service: false
 
 platforms:
   - name: ansible-ubuntu-16-04-lts
@@ -23,6 +27,7 @@ platforms:
     command: bash -c 'while true; do sleep 5; done'
     groups:
       - os_alpine
+      - no_service
   - name: ansible-arch
     image: archlinux/base:latest
     command: /usr/lib/systemd/systemd

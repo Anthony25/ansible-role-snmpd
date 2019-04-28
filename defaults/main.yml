@@ -1,5 +1,7 @@
 ---
 
+snmpd_start_service: true
+
 snmpd_logging_options: "-Lsd"
 
 snmpd_agent_address:
