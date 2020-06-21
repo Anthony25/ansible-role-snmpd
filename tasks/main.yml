@@ -49,6 +49,7 @@
   service:
     name: "snmpd"
     enabled: true
+  when: snmpd_start_service
 
 - name: Enable lldpd
   service:

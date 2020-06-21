@@ -36,6 +36,8 @@ platforms:
     privileged: true
   - name: ansible-fedora
     image: fedora:latest
+    groups:
+      - no_service
   - name: ansible-centos
     image: centos:latest
     command: /usr/lib/systemd/systemd
