@@ -16,14 +16,18 @@ provisioner:
         snmpd_start_service: false
 
 platforms:
-  - name: ansible-ubuntu-16-04-lts
-    image: ubuntu:16.04
   - name: ansible-ubuntu-18-04-lts
     image: ubuntu:18.04
+    groups:
+      - apt
   - name: ansible-ubuntu-lts
     image: ubuntu:20.04
+    groups:
+      - apt
   - name: ansible-debian
     image: debian:latest
+    groups:
+      - apt
   - name: ansible-alpine
     image: alpine:latest
     command: bash -c 'while true; do sleep 5; done'

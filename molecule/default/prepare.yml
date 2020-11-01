@@ -6,3 +6,11 @@
       apk:
         name: "openrc"
         update_cache: true
+
+- name: Update apt
+  hosts: apt
+  tasks:
+    - name: Update cache
+      apt:
+        update_cache: true
+        upgrade: true
